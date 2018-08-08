@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker FAKE - Build container",
+            "type": "shell",
+            "command": "docker build -t dominikjaniec/fake-cli ./docker/fake-cli",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Docker FAKE - Test basic start",
+            "type": "shell",
+            "command": "docker run -it -e FAKE_LEAVE_SHELL=true dominikjaniec/fake-cli",
+            "group": "test",
+            "dependsOn": [
+                "Docker FAKE - Build container"
+            ]
+        }
+    ]
+}
