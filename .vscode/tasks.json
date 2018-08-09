@@ -4,18 +4,27 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Executor FAKE - Restore Paket dependencies",
+            "type": "shell",
+            "command": "./execute-restore.sh",
+            "group": "build"
+        },
+        {
+            "label": "Executor FAKE - Test basic start",
+            "type": "shell",
+            "command": "./execute-test.sh",
+            "group": "test"
+        },
+        {
             "label": "Docker FAKE - Build container",
             "type": "shell",
-            "command": "docker build -t dominikjaniec/fake-cli ./docker/fake-cli",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "command": "./docker-make.sh",
+            "group": "build"
         },
         {
             "label": "Docker FAKE - Test basic start",
             "type": "shell",
-            "command": "docker run -it -e FAKE_LEAVE_SHELL=true dominikjaniec/fake-cli",
+            "command": "./docker-run.sh",
             "group": "test",
             "dependsOn": [
                 "Docker FAKE - Build container"
