@@ -10,27 +10,20 @@ Use F# in Jenkins via Fake with Docker
 > docker run --rm -it microsoft/dotnet
 ```
 
-### Within started `dotnet` container
-
-```bash
-> dotnet --version
-> fake --version
-```
-
 ### Install `Fake` via `dotnet`
 
 ```bash
-> dotnet tool install fake-cli -g && PATH="$PATH:/root/.dotnet/tools"
+> dotnet tool install fake-cli -g \
+    && PATH="$PATH:/root/.dotnet/tools"
 ```
 
-### Install `Paket` and `Fake` on Windows
+## Install `Paket` and `Fake` on Windows
 
 ```cmd
 > choco install dotnetcore-sdk
 > choco install paket
 > choco install fake
 ```
-
 
 ## Links
 

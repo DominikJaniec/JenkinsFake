@@ -3,6 +3,9 @@ FROM microsoft/dotnet
 RUN dotnet tool install fake-cli --global
 ENV PATH $PATH:/root/.dotnet/tools
 
+COPY fsi.sh /root/.dotnet/tools/fsi
+RUN chmod +x /root/.dotnet/tools/fsi
+
 WORKDIR /fake
 COPY readme.md /fake/
 COPY execute.sh /fake/

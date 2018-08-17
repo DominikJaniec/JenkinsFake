@@ -45,3 +45,4 @@ More information under: https://fake.build/
 
 * `dotnet --help`
 * `fake --help`
+* `fsi --help`
