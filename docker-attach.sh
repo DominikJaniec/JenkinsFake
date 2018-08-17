@@ -5,4 +5,7 @@
 echo ==========================================================
 echo === Starting attached interactive Fake CLI container...
 echo ===
-docker run -it -e JEN_FAKE_KEEP_SHELL=true dominikjaniec/fake-cli
+docker run -it --rm \
+    -e JEN_FAKE_ENV_SHOW=true \
+    -e JEN_FAKE_SHELL_KEEP=true \
+    dominikjaniec/fake-cli
